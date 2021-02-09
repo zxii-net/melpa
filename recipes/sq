@@ -1,0 +1,1 @@
+(sq :fetcher gitlab :repo "sequoia-pgp/emacs-sq")
