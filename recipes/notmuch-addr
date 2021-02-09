@@ -1,0 +1,3 @@
+(notmuch-addr
+ :fetcher git
+ :url "https://git.sr.ht/~tarsius/notmuch-addr")
