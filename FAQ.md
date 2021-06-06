@@ -47,11 +47,54 @@ crude but effective means of quality control for MELPA reviewers, and
 negotiating "grey areas" tends to take more time (ours and yours) than simply
 fixing them.
 
-<!--
 ## How do I make a package containing multiple themes?
 
-To be written.
+Choosing filenames in multi-theme packages can be tricky: typically you should
+have a "main" file that shares the same name as your package, and each theme
+file should begin with your package prefix while also ending in `-theme.el`.
 
+As a rough guideline to help with this, below is an example of a multi-theme
+package called `purple-themes`.  First comes our main file, `purple-themes.el`:
+```elisp
+;;; purple-themes.el --- Purple themes
+
+;;; Code:
+(defgroup purple-themes nil "Purple themes" :prefix "purple-themes-" :group 'faces)
+(defvar purple-themes-main-color "#FF00FF")
+
+;;; ###autoload
+(add-to-list
+ ;; Register themes when this file is loaded or when the buffer is evaluated:
+ 'custom-theme-load-path
+ (if load-file-name (file-name-directory load-file-name) default-directory))
+
+(provide 'purple-themes)
+;;; purple-themes.el ends here
+```
+
+From here we can define the actual color themes, for example a dark variant.
+This file should begin with `purple-themes-` and end with `-theme.el`:
+```elisp
+;;; purple-themes-dark-theme.el --- Purple themes: dark variant
+
+;;; Code:
+(require 'purple-themes)
+
+(deftheme purple-themes-dark "Purple themes: dark variant.")
+(custom-theme-set-faces
+ 'purple-themes-dark
+ `(default ((t (:background "midnight blue" :foreground ,purple-themes-main-color)))))
+
+(provide-theme 'purple-themes-dark)
+(provide 'purple-themes-dark-theme)
+;;; purple-themes-dark-theme.el ends here
+
+;; Local variables:
+;; package-lint-main-file: "purple-themes.el"
+;; end:
+```
+
+<!--
 ## Can I make MELPA run a command when it builds my package?
 
 To be written.
