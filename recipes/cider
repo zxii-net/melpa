@@ -1,0 +1,5 @@
+(cider :repo "clojure-emacs/cider"
+       :version-regexp "\\`v\\(1\\.1\\.0\\)\\'"
+       :fetcher github
+       :files ("*.el" (:exclude ".dir-locals.el"))
+       :old-names (nrepl))

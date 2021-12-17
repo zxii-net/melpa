@@ -1,0 +1,3 @@
+(pkg-info :repo "emacsorphanage/pkg-info"
+	  :version-regexp "\\`\\(0\\.4\\)\\'"
+	  :fetcher github)

@@ -1,0 +1,3 @@
+(parseclj :repo "clojure-emacs/parseclj"
+	  :version-regexp "\\`v\\(0\\.1\\.0\\)\\'"
+	  :fetcher github)

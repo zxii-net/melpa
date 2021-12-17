@@ -1,0 +1,3 @@
+(a :repo "plexus/a.el"
+   :version-regexp "\\`v\\(0\\.1\\.0alpha4\\)\\'"
+   :fetcher github)

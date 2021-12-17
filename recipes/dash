@@ -1,0 +1,4 @@
+(dash :repo "magnars/dash.el"
+      :version-regexp "\\`\\(1\\.6\\.0\\)\\'"
+      :fetcher github
+      :files ("dash.el" "dash.texi"))

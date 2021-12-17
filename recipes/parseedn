@@ -1,0 +1,3 @@
+(parseedn :repo "clojure-emacs/parseedn"
+	  :version-regexp "\\`v\\(0\\.2\\.0\\)\\'"
+	  :fetcher github)

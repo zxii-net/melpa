@@ -1,0 +1,3 @@
+(epl :repo "cask/epl"
+     :version-regexp "\\`\\(0\\.4\\)\\'"
+     :fetcher github)

@@ -1,0 +1,5 @@
+(clojure-mode :repo "clojure-emacs/clojure-mode"
+	      ;;:tag "5.12.0"
+	      :version-regexp "\\`\\(5\\.12\\.0\\)\\'"
+	      :fetcher github
+	      :files ("clojure-mode.el"))

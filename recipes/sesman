@@ -1,0 +1,3 @@
+(sesman :repo "vspinu/sesman"
+	:version-regexp "\\`v\\(0\\.3\\.2\\)\\'"
+	:fetcher github)
